@@ -41,11 +41,16 @@ pip install -r requirements.txt
 python jobscheduler.py   # Scrapes jobs every 30 mins
 python app/app.py        # Starts Flask dashboard
 
-⚙️ Running the Project
+---
+
+## 🚀 Running the Project
+
+
 🔁 Start the Job Scraper (Scheduler)
 
 python jobscheduler.py
 
+---
 🌐 Start the Flask App
 
 python app/app.py
