@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Scraper Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Real-Time Job Listings</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label>Upload your resume (TXT): </label>
+        <input type="file" name="resume">
+        <button type="submit">Match Jobs</button>
+    </form>
+    <hr>
+    {% if jobs %}
+    <h2>Top Matches</h2>
+    <ul>
+        {% for job, score in jobs %}
+        <li><strong>{{ job[0] }}</strong> at {{ job[1] }} ({{ job[2] }}) - <a href="{{ job[3] }}" target="_blank">View</a> - Match: {{ '%.2f'|format(score * 100) }}%</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
